@@ -1,7 +1,7 @@
 {
   "name": "apify-skills",
-  "version": "0.1.0",
-  "description": "Claude Code skills for web scraping and data extraction with Apify actors",
+  "version": "0.2.0",
+  "description": "Claude Code skills for web scraping, social media, news, and business data extraction with Apify actors",
   "author": {
     "name": "Rush",
     "url": "https://futurizerush.github.io"

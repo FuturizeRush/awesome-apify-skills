@@ -7,8 +7,11 @@ Claude Code skills for web scraping and data extraction with [Apify](https://api
 Install this plugin and Claude Code learns how to scrape websites, extract data, and run Apify actors on your behalf. Just say:
 
 - *"Scrape this website for product prices"*
-- *"Extract all articles from this blog"*
-- *"Crawl this site and get the content for my RAG pipeline"*
+- *"Get the latest AI news from Google News"*
+- *"Find coffee shops in Taipei with emails"*
+- *"Scrape replies from this Threads post"*
+- *"Find YouTube channels about AI with contact emails"*
+- *"Get comments from this TikTok video"*
 
 Claude handles the API calls, waits for results, and returns structured data.
 
@@ -35,6 +38,12 @@ claude --plugin-dir /path/to/awesome-apify-skills
 | Skill | Description |
 |-------|-------------|
 | [Web Scraping](skills/web-scraping/) | Scrape websites and extract structured data using Apify actors |
+| [Threads Scraper](skills/threads-scraper/) | Scrape Meta Threads posts, search by keyword or hashtag |
+| [Threads Replies](skills/threads-replies/) | Extract replies and comments from Threads posts |
+| [Google News](skills/google-news/) | Search and extract news articles with full content |
+| [Google Maps](skills/google-maps/) | Extract business listings with emails, ratings, hours |
+| [YouTube Email](skills/youtube-email/) | Find email addresses and contacts from YouTube channels |
+| [TikTok Comments](skills/tiktok-comments/) | Extract comments and replies from TikTok posts |
 
 ## Contributing
 
