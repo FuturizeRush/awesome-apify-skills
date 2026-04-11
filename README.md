@@ -1,6 +1,6 @@
 # Awesome Apify Skills for Claude Code
 
-Claude Code skills for web scraping and data extraction with [Apify](https://apify.com?fpr=rush) actors.
+A collection of Claude Code skills for web scraping and data extraction with [Apify](https://apify.com?fpr=rush) actors. Install all skills at once, or pick individual ones.
 
 ## What This Does
 
@@ -28,26 +28,30 @@ Claude handles the API calls, waits for results, and returns structured data.
 }
 ```
 
-3. Install the plugin:
+3. Install the full collection:
 ```bash
-claude --plugin-dir /path/to/awesome-apify-skills
+claude mcp add-plugin /path/to/awesome-apify-skills
 ```
+
+Or install individual skills (see links below).
 
 ## Skills
 
-| Skill | Description |
-|-------|-------------|
-| [Web Scraping](skills/web-scraping/) | Scrape websites and extract structured data using Apify actors |
-| [Threads Scraper](skills/threads-scraper/) | Scrape Meta Threads posts, search by keyword or hashtag |
-| [Threads Replies](skills/threads-replies/) | Extract replies and comments from Threads posts |
-| [Google News](skills/google-news/) | Search and extract news articles with full content |
-| [Google Maps](skills/google-maps/) | Extract business listings with emails, ratings, hours |
-| [YouTube Email](skills/youtube-email/) | Find email addresses and contacts from YouTube channels |
-| [TikTok Comments](skills/tiktok-comments/) | Extract comments and replies from TikTok posts |
+| Skill | Description | Standalone |
+|-------|-------------|------------|
+| [Web Scraping](skills/web-scraping/) | Scrape websites and extract structured data using Apify actors | — |
+| [Threads Scraper](skills/threads-scraper/) | Scrape Meta Threads posts, search by keyword or hashtag | [repo](https://github.com/FuturizeRush/threads-scraper-skill) |
+| [Threads Replies](skills/threads-replies/) | Extract replies and comments from Threads posts | [repo](https://github.com/FuturizeRush/threads-replies-skill) |
+| [Google News](skills/google-news/) | Search and extract news articles with full content | [repo](https://github.com/FuturizeRush/google-news-scraper-skill) |
+| [Google Maps](skills/google-maps/) | Extract business listings with emails, ratings, hours | [repo](https://github.com/FuturizeRush/google-maps-scraper-skill) |
+| [YouTube Email](skills/youtube-email/) | Find email addresses and contacts from YouTube channels | [repo](https://github.com/FuturizeRush/youtube-email-scraper-skill) |
+| [TikTok Comments](skills/tiktok-comments/) | Extract comments and replies from TikTok posts | [repo](https://github.com/FuturizeRush/tiktok-comment-scraper-skill) |
+
+All output field names are verified from real API runs.
 
 ## Contributing
 
-Have a useful Apify workflow? Add a new skill:
+Have a useful Apify workflow? Add a new skill! Contributions for **any** Apify actor are welcome — not just the ones listed here.
 
 1. Create a directory under `skills/`
 2. Add a `SKILL.md` with YAML frontmatter (see existing skills for format)
@@ -56,11 +60,14 @@ Have a useful Apify workflow? Add a new skill:
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
+## Disclosure
+
+Some skills in this collection use actors built by the maintainer ([@FuturizeRush](https://apify.com/futurizerush?fpr=rush)). Links to Apify include an affiliate tracking parameter. Community contributions for any Apify actor are welcome.
+
 ## Links
 
 - [Apify Platform](https://apify.com?fpr=rush)
 - [Apify Actor Store](https://apify.com/store?fpr=rush)
-- [Rush's Apify Actors](https://airush.dev/)
 - [Claude Code Skills Documentation](https://docs.claude.com/en/docs/claude-code/plugins)
 
 ## License
