@@ -32,53 +32,48 @@ Typical run time: 30 seconds to 5 minutes depending on the actor and page count.
 
 | Actor | Use Case | Actor ID |
 |-------|----------|----------|
-| Web Scraper | General-purpose scraping with custom page function | `apify/web-scraper` |
-| Cheerio Scraper | Fast HTML scraping without browser rendering | `apify/cheerio-scraper` |
-| Playwright Scraper | JavaScript-heavy sites needing full browser | `apify/playwright-scraper` |
-| Website Content Crawler | Extract text content from entire sites | `apify/website-content-crawler` |
+| Web Scraper | General-purpose scraping with custom page function | `apify~web-scraper` |
+| Cheerio Scraper | Fast HTML scraping without browser rendering | `apify~cheerio-scraper` |
+| Playwright Scraper | JavaScript-heavy sites needing full browser | `apify~playwright-scraper` |
+| Website Content Crawler | Extract text content from entire sites | `apify~website-content-crawler` |
 
 Browse more actors at [apify.com/store](https://apify.com/store?fpr=rush).
 
-## Workflow
-
-### 1. Start an Actor Run
+## Complete Example (Python)
 
 ```python
-import httpx, os
+import requests, os, time
 
-APIFY_TOKEN = os.environ["APIFY_API_TOKEN"]
+TOKEN = os.environ["APIFY_API_TOKEN"]
+BASE = "https://api.apify.com/v2"
 
-response = httpx.post(
-    f"https://api.apify.com/v2/acts/apify~web-scraper/runs?token={APIFY_TOKEN}",
+# Step 1: Start the run
+response = requests.post(
+    f"{BASE}/acts/apify~web-scraper/runs?token={TOKEN}",
     json={
         "startUrls": [{"url": "https://example.com"}],
         "maxPagesPerCrawl": 10,
     },
 )
+response.raise_for_status()
 run = response.json()["data"]
 run_id = run["id"]
-```
-
-### 2. Wait for Completion
-
-```python
-import time
-
-while True:
-    status = httpx.get(
-        f"https://api.apify.com/v2/actor-runs/{run_id}?token={APIFY_TOKEN}"
-    ).json()["data"]["status"]
-    if status in ("SUCCEEDED", "FAILED", "ABORTED"):
-        break
-    time.sleep(5)
-```
-
-### 3. Get Results
-
-```python
 dataset_id = run["defaultDatasetId"]
-items = httpx.get(
-    f"https://api.apify.com/v2/datasets/{dataset_id}/items?token={APIFY_TOKEN}"
+
+# Step 2: Poll until done
+while True:
+    status = requests.get(
+        f"{BASE}/actor-runs/{run_id}?token={TOKEN}"
+    ).json()["data"]["status"]
+    if status == "SUCCEEDED":
+        break
+    if status in ("FAILED", "ABORTED", "TIMED-OUT"):
+        raise RuntimeError(f"Run failed: {status}")
+    time.sleep(5)
+
+# Step 3: Fetch results
+items = requests.get(
+    f"{BASE}/datasets/{dataset_id}/items?token={TOKEN}"
 ).json()
 ```
 
@@ -112,9 +107,9 @@ For actor-specific output formats, see the dedicated skills in this collection (
 ## Tips
 
 - Use `maxPagesPerCrawl` to limit costs during development.
-- Use `Website Content Crawler` (`apify/website-content-crawler`) for RAG pipelines -- it outputs clean text.
-- Use `Cheerio Scraper` for speed when pages don't need JavaScript rendering.
-- Use `Playwright Scraper` for JavaScript-heavy SPAs.
+- Use `Website Content Crawler` (`apify~website-content-crawler`) for RAG pipelines -- it outputs clean text.
+- Use `Cheerio Scraper` (`apify~cheerio-scraper`) for speed when pages don't need JavaScript rendering.
+- Use `Playwright Scraper` (`apify~playwright-scraper`) for JavaScript-heavy SPAs.
 - Set `APIFY_API_TOKEN` in `.claude/settings.json` env block for persistent access.
 - For social media scraping, use the dedicated skills in this collection (Threads, Google News, Google Maps, YouTube Email, TikTok Comments).
 
