@@ -42,17 +42,17 @@ Or install standalone repos directly (see links below).
 
 ## Skills
 
-| Skill | Description | Standalone |
+| Skill | Apify Actor | Standalone |
 |-------|-------------|------------|
-| [Web Scraping](skills/web-scraping/) | Scrape websites and extract structured data using Apify actors | — |
-| [Threads Scraper](skills/threads-scraper/) | Scrape Meta Threads posts, search by keyword or hashtag | [repo](https://github.com/FuturizeRush/threads-scraper-skill) |
-| [Threads Replies](skills/threads-replies/) | Extract replies and comments from Threads posts | [repo](https://github.com/FuturizeRush/threads-replies-skill) |
-| [Google News](skills/google-news/) | Search and extract news articles with full content | [repo](https://github.com/FuturizeRush/google-news-scraper-skill) |
-| [Google Maps](skills/google-maps/) | Extract business listings with emails, ratings, hours | [repo](https://github.com/FuturizeRush/google-maps-scraper-skill) |
-| [YouTube Email](skills/youtube-email/) | Find email addresses and contacts from YouTube channels | [repo](https://github.com/FuturizeRush/youtube-email-scraper-skill) |
-| [TikTok Comments](skills/tiktok-comments/) | Extract comments and replies from TikTok posts | [repo](https://github.com/FuturizeRush/tiktok-comment-scraper-skill) |
+| [Web Scraping](skills/web-scraping/) | General-purpose ([Actor Store](https://apify.com/store?fpr=rush)) | — |
+| [Threads Scraper](skills/threads-scraper/) | [meta-threads-scraper](https://apify.com/futurizerush/meta-threads-scraper?fpr=rush) | [repo](https://github.com/FuturizeRush/threads-scraper-skill) |
+| [Threads Replies](skills/threads-replies/) | [threads-replies-scraper](https://apify.com/futurizerush/threads-replies-scraper?fpr=rush) | [repo](https://github.com/FuturizeRush/threads-replies-skill) |
+| [Google News](skills/google-news/) | [google-news-scraper](https://apify.com/futurizerush/google-news-scraper?fpr=rush) | [repo](https://github.com/FuturizeRush/google-news-scraper-skill) |
+| [Google Maps](skills/google-maps/) | [google-maps-scraper](https://apify.com/futurizerush/google-maps-scraper?fpr=rush) | [repo](https://github.com/FuturizeRush/google-maps-scraper-skill) |
+| [YouTube Email](skills/youtube-email/) | [youtube-email-scraper](https://apify.com/futurizerush/youtube-email-scraper?fpr=rush) | [repo](https://github.com/FuturizeRush/youtube-email-scraper-skill) |
+| [TikTok Comments](skills/tiktok-comments/) | [tiktok-comment-scraper](https://apify.com/futurizerush/tiktok-comment-scraper?fpr=rush) | [repo](https://github.com/FuturizeRush/tiktok-comment-scraper-skill) |
 
-All output field names are verified from real API runs.
+All output field names verified from real API runs. All Actor URLs verified accessible (HTTP 200).
 
 ## Contributing
 
