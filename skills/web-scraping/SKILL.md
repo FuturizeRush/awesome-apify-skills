@@ -18,21 +18,15 @@ Scrape websites and extract structured data using Apify actors through their RES
 
 Set the `APIFY_API_TOKEN` environment variable. Get a token at [console.apify.com/account/integrations](https://console.apify.com/account/integrations?fpr=rush).
 
-## Quick Start
+## Execution Flow
 
-Run any Apify actor via the REST API:
+Apify runs are asynchronous. Every request follows 3 steps:
 
-```bash
-curl -X POST "https://api.apify.com/v2/acts/apify~web-scraper/runs?token=$APIFY_API_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"startUrls": [{"url": "https://example.com"}]}'
-```
+1. **Start a run** -- POST to the actor API, receive a run ID and dataset ID
+2. **Poll until done** -- GET the run status, wait for `SUCCEEDED`
+3. **Fetch results** -- GET the dataset items (returns a JSON array)
 
-Then fetch results:
-
-```bash
-curl "https://api.apify.com/v2/datasets/{DATASET_ID}/items?token=$APIFY_API_TOKEN"
-```
+Typical run time: 30 seconds to 5 minutes depending on the actor and page count.
 
 ## Common Actors
 
@@ -88,13 +82,44 @@ items = httpx.get(
 ).json()
 ```
 
+## Output Format
+
+Output varies by actor. The `Website Content Crawler` returns items like:
+
+```json
+{
+  "url": "https://example.com/page",
+  "text": "Extracted page text content...",
+  "metadata": {
+    "title": "Page Title",
+    "description": "Meta description",
+    "languageCode": "en"
+  }
+}
+```
+
+For actor-specific output formats, see the dedicated skills in this collection (Threads, Google News, Google Maps, YouTube, TikTok) or check the actor's page on [Apify Store](https://apify.com/store?fpr=rush).
+
+## Error Handling
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| 401 Unauthorized | Invalid or missing API token | Check `APIFY_API_TOKEN` |
+| 404 Not Found | Actor ID is wrong | Verify the actor ID (format: `owner~actor-name`) |
+| Run status `FAILED` | Actor error (bad input, site blocking, etc.) | Check run log at `https://api.apify.com/v2/actor-runs/{RUN_ID}/log` |
+| Run status `TIMED-OUT` | Crawl exceeded timeout | Reduce `maxPagesPerCrawl` or increase timeout in run options |
+
 ## Tips
 
 - Use `maxPagesPerCrawl` to limit costs during development.
-- Use `Website Content Crawler` for RAG pipelines -- it outputs clean text.
-- Use webhooks instead of polling for production workflows.
+- Use `Website Content Crawler` (`apify/website-content-crawler`) for RAG pipelines -- it outputs clean text.
+- Use `Cheerio Scraper` for speed when pages don't need JavaScript rendering.
+- Use `Playwright Scraper` for JavaScript-heavy SPAs.
 - Set `APIFY_API_TOKEN` in `.claude/settings.json` env block for persistent access.
+- For social media scraping, use the dedicated skills in this collection (Threads, Google News, Google Maps, YouTube Email, TikTok Comments).
 
-## Reference Files
+## Links
 
+- [Apify Actor Store](https://apify.com/store?fpr=rush)
+- [Apify API docs](https://docs.apify.com/api/v2)
 - **`references/api-reference.md`** -- Full Apify API endpoints and parameters
