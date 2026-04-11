@@ -28,12 +28,17 @@ Claude handles the API calls, waits for results, and returns structured data.
 }
 ```
 
-3. Install the full collection:
+3. Add the marketplace and install skills:
 ```bash
-claude mcp add-plugin /path/to/awesome-apify-skills
+# Add the marketplace
+/plugin marketplace add FuturizeRush/awesome-apify-skills
+
+# Install individual skills
+/plugin install threads-scraper@apify-skills
+/plugin install google-news-scraper@apify-skills
 ```
 
-Or install individual skills (see links below).
+Or install standalone repos directly (see links below).
 
 ## Skills
 

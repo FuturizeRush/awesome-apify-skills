@@ -1,0 +1,109 @@
+{
+  "name": "apify-skills",
+  "owner": {
+    "name": "Rush",
+    "email": "futurizerush@gmail.com"
+  },
+  "metadata": {
+    "description": "Claude Code skills for web scraping and data extraction with Apify actors",
+    "version": "0.2.0"
+  },
+  "plugins": [
+    {
+      "name": "threads-scraper",
+      "source": {
+        "source": "github",
+        "repo": "FuturizeRush/threads-scraper-skill"
+      },
+      "description": "Scrape Meta Threads posts, search by keyword or hashtag",
+      "version": "0.2.0",
+      "author": {
+        "name": "Rush"
+      },
+      "repository": "https://github.com/FuturizeRush/threads-scraper-skill",
+      "license": "MIT",
+      "keywords": ["threads", "scraping", "social-media", "apify"],
+      "category": "data-extraction"
+    },
+    {
+      "name": "threads-replies",
+      "source": {
+        "source": "github",
+        "repo": "FuturizeRush/threads-replies-skill"
+      },
+      "description": "Extract replies and comments from Threads posts",
+      "version": "0.1.0",
+      "author": {
+        "name": "Rush"
+      },
+      "repository": "https://github.com/FuturizeRush/threads-replies-skill",
+      "license": "MIT",
+      "keywords": ["threads", "replies", "comments", "apify"],
+      "category": "data-extraction"
+    },
+    {
+      "name": "google-news-scraper",
+      "source": {
+        "source": "github",
+        "repo": "FuturizeRush/google-news-scraper-skill"
+      },
+      "description": "Search and extract news articles from Google News with full content",
+      "version": "0.1.0",
+      "author": {
+        "name": "Rush"
+      },
+      "repository": "https://github.com/FuturizeRush/google-news-scraper-skill",
+      "license": "MIT",
+      "keywords": ["google-news", "news", "articles", "apify"],
+      "category": "data-extraction"
+    },
+    {
+      "name": "google-maps-scraper",
+      "source": {
+        "source": "github",
+        "repo": "FuturizeRush/google-maps-scraper-skill"
+      },
+      "description": "Extract business listings from Google Maps with emails, ratings, hours",
+      "version": "0.1.0",
+      "author": {
+        "name": "Rush"
+      },
+      "repository": "https://github.com/FuturizeRush/google-maps-scraper-skill",
+      "license": "MIT",
+      "keywords": ["google-maps", "business", "leads", "email", "apify"],
+      "category": "data-extraction"
+    },
+    {
+      "name": "youtube-email-scraper",
+      "source": {
+        "source": "github",
+        "repo": "FuturizeRush/youtube-email-scraper-skill"
+      },
+      "description": "Find email addresses and contacts from YouTube channels",
+      "version": "0.1.0",
+      "author": {
+        "name": "Rush"
+      },
+      "repository": "https://github.com/FuturizeRush/youtube-email-scraper-skill",
+      "license": "MIT",
+      "keywords": ["youtube", "email", "influencer", "contacts", "apify"],
+      "category": "data-extraction"
+    },
+    {
+      "name": "tiktok-comment-scraper",
+      "source": {
+        "source": "github",
+        "repo": "FuturizeRush/tiktok-comment-scraper-skill"
+      },
+      "description": "Extract comments and replies from TikTok posts",
+      "version": "0.1.0",
+      "author": {
+        "name": "Rush"
+      },
+      "repository": "https://github.com/FuturizeRush/tiktok-comment-scraper-skill",
+      "license": "MIT",
+      "keywords": ["tiktok", "comments", "social-media", "apify"],
+      "category": "data-extraction"
+    }
+  ]
+}
