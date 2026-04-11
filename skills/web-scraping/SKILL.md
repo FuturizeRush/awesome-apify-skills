@@ -79,21 +79,9 @@ items = requests.get(
 
 ## Output Format
 
-Output varies by actor. The `Website Content Crawler` returns items like:
+Output format varies by actor. Check the actor's page on [Apify Store](https://apify.com/store?fpr=rush) for the specific output schema.
 
-```json
-{
-  "url": "https://example.com/page",
-  "text": "Extracted page text content...",
-  "metadata": {
-    "title": "Page Title",
-    "description": "Meta description",
-    "languageCode": "en"
-  }
-}
-```
-
-For actor-specific output formats, see the dedicated skills in this collection (Threads, Google News, Google Maps, YouTube, TikTok) or check the actor's page on [Apify Store](https://apify.com/store?fpr=rush).
+For verified output formats, see the dedicated skills in this collection: Threads Scraper, Threads Replies, Google News, Google Maps, YouTube Email, and TikTok Comments.
 
 ## Error Handling
 
