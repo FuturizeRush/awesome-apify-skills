@@ -104,6 +104,32 @@
       "license": "MIT",
       "keywords": ["tiktok", "comments", "social-media", "apify"],
       "category": "data-extraction"
+    },
+    {
+      "name": "x-tweet-scraper",
+      "source": "./skills/x-tweet-scraper",
+      "description": "Scrape X posts, searches, timelines, lists, and threads",
+      "version": "0.1.0",
+      "author": {
+        "name": "Xquik"
+      },
+      "repository": "https://github.com/FuturizeRush/awesome-apify-skills",
+      "license": "MIT",
+      "keywords": ["x", "twitter", "tweets", "social-media", "apify"],
+      "category": "data-extraction"
+    },
+    {
+      "name": "x-follower-scraper",
+      "source": "./skills/x-follower-scraper",
+      "description": "Scrape X followers, following, lists, and communities",
+      "version": "0.1.0",
+      "author": {
+        "name": "Xquik"
+      },
+      "repository": "https://github.com/FuturizeRush/awesome-apify-skills",
+      "license": "MIT",
+      "keywords": ["x", "twitter", "followers", "social-media", "apify"],
+      "category": "data-extraction"
     }
   ]
 }

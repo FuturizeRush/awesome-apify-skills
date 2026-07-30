@@ -52,10 +52,12 @@ import requests, os, time
 
 TOKEN = os.environ["APIFY_API_TOKEN"]
 BASE = "https://api.apify.com/v2"
+HEADERS = {"Authorization": f"Bearer {TOKEN}"}
 
 # Step 1: Start the run
 response = requests.post(
-    f"{BASE}/acts/futurizerush~youtube-email-scraper/runs?token={TOKEN}",
+    f"{BASE}/acts/futurizerush~youtube-email-scraper/runs",
+    headers=HEADERS,
     json={
         "inputMode": "keywordSearch",
         "searchKeywords": ["AI automation"],
@@ -72,7 +74,8 @@ dataset_id = run["defaultDatasetId"]
 # Step 2: Poll until done
 while True:
     status = requests.get(
-        f"{BASE}/actor-runs/{run_id}?token={TOKEN}"
+        f"{BASE}/actor-runs/{run_id}",
+        headers=HEADERS,
     ).json()["data"]["status"]
     if status == "SUCCEEDED":
         break
@@ -82,7 +85,8 @@ while True:
 
 # Step 3: Fetch results (JSON array)
 items = requests.get(
-    f"{BASE}/datasets/{dataset_id}/items?token={TOKEN}"
+    f"{BASE}/datasets/{dataset_id}/items",
+    headers=HEADERS,
 ).json()
 
 # Filter channels with emails
@@ -97,7 +101,8 @@ for channel in items:
 
 ```python
 requests.post(
-    f"{BASE}/acts/futurizerush~youtube-email-scraper/runs?token={TOKEN}",
+    f"{BASE}/acts/futurizerush~youtube-email-scraper/runs",
+    headers=HEADERS,
     json={
         "inputMode": "directUrls",
         "channelUrls": [
@@ -113,7 +118,8 @@ requests.post(
 ```bash
 # Step 1: Start the run
 RUN_RESPONSE=$(curl -s -X POST \
-  "https://api.apify.com/v2/acts/futurizerush~youtube-email-scraper/runs?token=$APIFY_API_TOKEN" \
+  "https://api.apify.com/v2/acts/futurizerush~youtube-email-scraper/runs" \
+  -H "Authorization: Bearer ${APIFY_API_TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{"inputMode": "keywordSearch", "searchKeywords": ["AI automation"], "maxChannelsPerKeyword": 10, "maxResults": 10}')
 
@@ -122,7 +128,8 @@ DATASET_ID=$(echo "$RUN_RESPONSE" | jq -r '.data.defaultDatasetId')
 
 # Step 2: Poll until done
 while true; do
-  STATUS=$(curl -s "https://api.apify.com/v2/actor-runs/$RUN_ID?token=$APIFY_API_TOKEN" \
+  STATUS=$(curl -s "https://api.apify.com/v2/actor-runs/$RUN_ID" \
+    -H "Authorization: Bearer ${APIFY_API_TOKEN}" \
     | jq -r '.data.status')
   [ "$STATUS" = "SUCCEEDED" ] && break
   [ "$STATUS" = "FAILED" ] || [ "$STATUS" = "ABORTED" ] && echo "Failed: $STATUS" && exit 1
@@ -130,7 +137,8 @@ while true; do
 done
 
 # Step 3: Fetch results
-curl -s "https://api.apify.com/v2/datasets/$DATASET_ID/items?token=$APIFY_API_TOKEN" | jq '.'
+curl -s "https://api.apify.com/v2/datasets/$DATASET_ID/items" \
+  -H "Authorization: Bearer ${APIFY_API_TOKEN}" | jq '.'
 ```
 
 ## Output Format

@@ -46,10 +46,12 @@ import requests, os, time
 
 TOKEN = os.environ["APIFY_API_TOKEN"]
 BASE = "https://api.apify.com/v2"
+HEADERS = {"Authorization": f"Bearer {TOKEN}"}
 
 # Step 1: Start the run
 response = requests.post(
-    f"{BASE}/acts/apify~web-scraper/runs?token={TOKEN}",
+    f"{BASE}/acts/apify~web-scraper/runs",
+    headers=HEADERS,
     json={
         "startUrls": [{"url": "https://example.com"}],
         "maxPagesPerCrawl": 10,
@@ -63,7 +65,8 @@ dataset_id = run["defaultDatasetId"]
 # Step 2: Poll until done
 while True:
     status = requests.get(
-        f"{BASE}/actor-runs/{run_id}?token={TOKEN}"
+        f"{BASE}/actor-runs/{run_id}",
+        headers=HEADERS,
     ).json()["data"]["status"]
     if status == "SUCCEEDED":
         break
@@ -73,7 +76,8 @@ while True:
 
 # Step 3: Fetch results
 items = requests.get(
-    f"{BASE}/datasets/{dataset_id}/items?token={TOKEN}"
+    f"{BASE}/datasets/{dataset_id}/items",
+    headers=HEADERS,
 ).json()
 ```
 

@@ -2,7 +2,8 @@
 
 ## Authentication
 
-All requests require `token` query parameter or `Authorization: Bearer <token>` header.
+Send the token through an `Authorization: Bearer <token>` header. Do not place
+tokens in URLs, logs, or saved command history.
 
 Get your token: [console.apify.com/account/integrations](https://console.apify.com/account/integrations?fpr=rush)
 
@@ -11,7 +12,8 @@ Get your token: [console.apify.com/account/integrations](https://console.apify.c
 ### Run an Actor
 
 ```
-POST https://api.apify.com/v2/acts/{actorId}/runs?token={token}
+POST https://api.apify.com/v2/acts/{actorId}/runs
+Authorization: Bearer <token>
 Content-Type: application/json
 
 {
@@ -34,7 +36,8 @@ Response:
 ### Check Run Status
 
 ```
-GET https://api.apify.com/v2/actor-runs/{runId}?token={token}
+GET https://api.apify.com/v2/actor-runs/{runId}
+Authorization: Bearer <token>
 ```
 
 Statuses: `READY`, `RUNNING`, `SUCCEEDED`, `FAILED`, `ABORTING`, `ABORTED`, `TIMING-OUT`, `TIMED-OUT`
@@ -42,7 +45,8 @@ Statuses: `READY`, `RUNNING`, `SUCCEEDED`, `FAILED`, `ABORTING`, `ABORTED`, `TIM
 ### Get Dataset Items
 
 ```
-GET https://api.apify.com/v2/datasets/{datasetId}/items?token={token}
+GET https://api.apify.com/v2/datasets/{datasetId}/items
+Authorization: Bearer <token>
 ```
 
 Query parameters:
@@ -53,7 +57,8 @@ Query parameters:
 ### Get Key-Value Store Record
 
 ```
-GET https://api.apify.com/v2/key-value-stores/{storeId}/records/{key}?token={token}
+GET https://api.apify.com/v2/key-value-stores/{storeId}/records/{key}
+Authorization: Bearer <token>
 ```
 
 ## Actor Input Schema
