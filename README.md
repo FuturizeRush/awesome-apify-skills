@@ -36,6 +36,8 @@ Claude handles the API calls, waits for results, and returns structured data.
 # Install individual skills
 /plugin install threads-scraper@apify-skills
 /plugin install google-news-scraper@apify-skills
+/plugin install x-tweet-scraper@apify-skills
+/plugin install x-follower-scraper@apify-skills
 ```
 
 Or install standalone repos directly (see links below).
@@ -51,6 +53,8 @@ Or install standalone repos directly (see links below).
 | [Google Maps](skills/google-maps/) | Extract business listings with emails, ratings, hours | [google-maps-scraper](https://apify.com/futurizerush/google-maps-scraper?fpr=rush) | [repo](https://github.com/FuturizeRush/google-maps-scraper-skill) |
 | [YouTube Email](skills/youtube-email/) | Find email addresses and contacts from YouTube channels | [youtube-email-scraper](https://apify.com/futurizerush/youtube-email-scraper?fpr=rush) | [repo](https://github.com/FuturizeRush/youtube-email-scraper-skill) |
 | [TikTok Comments](skills/tiktok-comments/) | Extract comments and replies from TikTok posts | [tiktok-comment-scraper](https://apify.com/futurizerush/tiktok-comment-scraper?fpr=rush) | [repo](https://github.com/FuturizeRush/tiktok-comment-scraper-skill) |
+| [X Tweet Scraper](skills/x-tweet-scraper/) | Scrape X (Twitter) tweets by URL, handle, search, list, or tweet ID | [x-tweet-scraper](https://apify.com/xquik/x-tweet-scraper?fpr=rush) | - |
+| [X Follower Scraper](skills/x-follower-scraper/) | Scrape X (Twitter) followers, following, list members & community members | [x-follower-scraper](https://apify.com/xquik/x-follower-scraper?fpr=rush) | - |
 
 All output field names verified from real API runs.
 

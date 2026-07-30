@@ -39,5 +39,6 @@ version: 0.1.0
 
 - Each skill should solve a real use case
 - Include working code examples
+- Pass API tokens in authorization headers, never URL query strings
 - Keep SKILL.md focused; put details in `references/`
 - Test that Claude Code actually triggers the skill on the intended queries
