@@ -51,6 +51,14 @@ Or install standalone repos directly (see links below).
 | [Google Maps](skills/google-maps/) | Extract business listings with emails, ratings, hours | [google-maps-scraper](https://apify.com/futurizerush/google-maps-scraper?fpr=rush) | [repo](https://github.com/FuturizeRush/google-maps-scraper-skill) |
 | [YouTube Email](skills/youtube-email/) | Find email addresses and contacts from YouTube channels | [youtube-email-scraper](https://apify.com/futurizerush/youtube-email-scraper?fpr=rush) | [repo](https://github.com/FuturizeRush/youtube-email-scraper-skill) |
 | [TikTok Comments](skills/tiktok-comments/) | Extract comments and replies from TikTok posts | [tiktok-comment-scraper](https://apify.com/futurizerush/tiktok-comment-scraper?fpr=rush) | [repo](https://github.com/FuturizeRush/tiktok-comment-scraper-skill) |
+| [ATS Job Postings](skills/ats-job-postings/) | New job postings since a date or window from Ashby, Greenhouse, Lever and SmartRecruiters boards. | [publicrecords/ashby-jobs-scraper](https://apify.com/publicrecords/ashby-jobs-scraper) | — |
+| [Company Social Links](skills/company-social-profiles/) | Company domain or name to official LinkedIn, X, YouTube, Instagram and Facebook links, with evidence. | [publicrecords/company-social-profile-finder](https://apify.com/publicrecords/company-social-profile-finder) | — |
+| [Etsy Market Research](skills/etsy-market-research/) | Etsy search listings and shop daily/7-day/28-day sales from public shop counters. | [publicrecords/etsy-search-scraper](https://apify.com/publicrecords/etsy-search-scraper) | — |
+| [Calibration Ledger](skills/forecast-track-record/) | Forecast track records for IMF, OECD, Fed, ECB SPF and listed issuers (errors and bias). | [publicrecords/calibration-ledger](https://apify.com/publicrecords/calibration-ledger) | — |
+| [Google Ads Transparency](skills/google-ads-transparency/) | Competitor Google ads from the Ads Transparency Center, with first and last shown dates. | [publicrecords/google-ads-transparency-scraper](https://apify.com/publicrecords/google-ads-transparency-scraper) | — |
+| [Gov Tenders & Grants](skills/gov-tenders-and-grants/) | Official public procurement and grants: Grants.gov, SAM.gov, USAspending, UK Find a Tender, EU TED, and Legistar meetings. | [publicrecords/grants-gov-scraper](https://apify.com/publicrecords/grants-gov-scraper) | — |
+| [Sports Odds](skills/sports-odds/) | Live odds from 24 Kambi-powered sportsbooks, with every book's price and the best price per outcome. | [publicrecords/sports-odds-api](https://apify.com/publicrecords/sports-odds-api) | — |
+| [Spotify Play Counts](skills/spotify-play-counts/) | Play counts for tracks on a Spotify album, artist or playlist, plus monthly listeners. | [publicrecords/spotify-play-count-scraper](https://apify.com/publicrecords/spotify-play-count-scraper) | — |
 
 All output field names verified from real API runs.
 
