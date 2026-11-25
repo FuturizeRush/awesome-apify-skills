@@ -58,6 +58,7 @@ Or install standalone repos directly (see links below).
 | [Google Ads Transparency](skills/google-ads-transparency/) | Competitor Google ads from the Ads Transparency Center, with first and last shown dates. | [publicrecords/google-ads-transparency-scraper](https://apify.com/publicrecords/google-ads-transparency-scraper) | — |
 | [Gov Tenders & Grants](skills/gov-tenders-and-grants/) | Official public procurement and grants: Grants.gov, SAM.gov, USAspending, UK Find a Tender, EU TED, and Legistar meetings. | [publicrecords/grants-gov-scraper](https://apify.com/publicrecords/grants-gov-scraper) | — |
 | [Sports Odds](skills/sports-odds/) | Live odds from 24 Kambi-powered sportsbooks, with every book's price and the best price per outcome. | [publicrecords/sports-odds-api](https://apify.com/publicrecords/sports-odds-api) | — |
+| [Tennis Scores](skills/tennis-scores/) | ATP and WTA match scores, tournament draws and tour rankings. Called through the Apify API with your own token (Standby/MCP is not built). | [publicrecords/tennis-scores-api](https://apify.com/publicrecords/tennis-scores-api) |
 | [Spotify Play Counts](skills/spotify-play-counts/) | Play counts for tracks on a Spotify album, artist or playlist, plus monthly listeners. | [publicrecords/spotify-play-count-scraper](https://apify.com/publicrecords/spotify-play-count-scraper) | — |
 
 All output field names verified from real API runs.
